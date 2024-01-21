@@ -1,0 +1,320 @@
+/*   Стили для всей страницы   */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    font-size: 16px;
+    font-family: 'Roboto Mono', monospace;
+
+    background-image: url("images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+button{
+    cursor: pointer;
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+
+    font-weight: 400;
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0 2px 8px #541d53;
+
+    background: linear-gradient(-90deg, #FF54FD 0%, #6654FF 100%);
+
+}
+button:disabled{
+    cursor: not-allowed;
+    color: #00000080;
+    text-shadow: none;
+    background: linear-gradient(90deg, #828282 0%, #FFFFFF80 100%);
+}
+header {
+    background: #FFFFFF80;
+    backdrop-filter: blur(4px);
+}
+main{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.game-zones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+/*   Заголовок страницы   */
+.page-heading {
+    font-size: 48px;
+    text-align: center;
+    color: #FF54FD;
+}
+
+/*   Стили для формы   */
+
+.form-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-wrapper, .battle-zone{
+    padding: 16px;
+    border-radius: 12px;
+
+    background: #FFFFFF80;
+    backdrop-filter: blur(4px);
+}
+.form {
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-input {
+    padding: 8px 16px 0;
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+
+    font-size: 24px;
+    text-overflow: ellipsis;
+    font-family: 'Roboto Mono', monospace;
+    color: #6654FF;
+
+    background: #FFF;
+    box-shadow: 4px 4px 8px 0 #6654FF50 inset;
+}
+
+.form-input:focus {
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: #FF54FD60;
+}
+
+.radio-row {
+    width: 100%;
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.radio-input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.radio-input + label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+.radio-input + label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 1px solid #6654FF;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+.radio-input:checked + label::before {
+    border-color: #6654FF;
+    background-color: #6654FF;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.radio-label-text, .radio-label-title {
+    text-align: center;
+    font-size: 24px;
+    color: #6654FF;
+}
+
+.radio-label-title {
+    font-weight: 700;
+}
+
+.form-parameters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.parameter-input {
+    max-width: 48%;
+}
+
+.form-button {
+    margin-top: 8px;
+    padding: 16px 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+#errorText {
+    color: #FF5656;
+}
+
+/*   Стили для карточек   */
+
+.cards {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.card-wrapper {
+    flex: 1;
+    max-width: 346px;
+    padding: 16px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(152deg, #FFE500 0%, #FF54FD 50.24%, #6654FF 100%);
+}
+
+.card-heading {
+    text-align: center;
+    font-size: 24px;
+
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px #541d53;
+}
+
+.card {
+    margin-top: 8px;
+    padding: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 8px;
+
+    background: #FFFFFF80;
+    backdrop-filter: blur(4px);
+
+    color: #6654FF;
+
+    overflow: hidden;
+}
+
+.card-class{
+    font-size: 24px;
+    text-align: center;
+    font-weight: 300;
+}
+.card-title-text{
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.card-description-text {
+    font-weight: 400;
+    text-align: center;
+}
+.card-parameters-heading{
+    margin: 8px 0;
+}
+.card-parameters {
+    display: flex;
+    justify-content: space-around;
+    gap: 16px;
+}
+
+.card-parameter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-parameter-title {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.card-parameter-value {
+    font-weight: 300;
+    font-size: 16px;
+}
+.card-button{
+    margin-top: 8px;
+    padding: 8px;
+    font-size: 24px;
+}
+
+.battle-zone-button{
+    margin-top: 16px;
+    padding: 16px;
+    font-size: 24px;
+    font-weight: 700;
+
+    background: linear-gradient(90deg, #00FF19 0%, #6654FF 100%);
+}
+
+/*   Медиазапросы   */
+
+@media screen and (max-width: 752px) {
+    .page-heading {
+        font-size: 32px;
+    }
+
+    .form-input,
+    .card-description,
+    .card-parameter-value,
+    .radio-label-text,
+    .radio-label-title,
+    .form-button {
+        font-size: 24px;
+    }
+
+    .form-button {
+        margin-top: 4px;
+    }
+
+    .form, .cards {
+        gap: 16px;
+    }
+
+    .cards {
+        margin-top: 16px;
+    }
+}
+
+@media screen and (max-width: 394px) {
+    .page-heading {
+        font-size: 24px;
+    }
+}
