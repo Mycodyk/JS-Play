@@ -1,2 +1,2 @@
-# JS-Play
+# JS- Game
 Мини игра на Javascript
